@@ -48,10 +48,11 @@
 
             let result = [];
 
-            for (let n = 1; n < z; n++) {
-                result.push(x * y);
+             for (let n = 1; n < z; n++) {
+            if (n % x === 0 || n % y === 0) {
+                multiples.push(n);
             }
-
+        }
             document.getElementById("results2").textContent = result.join(", ");
         }
     </script>
