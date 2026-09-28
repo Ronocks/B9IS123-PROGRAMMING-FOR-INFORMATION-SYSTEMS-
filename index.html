@@ -6,7 +6,8 @@
 </head>
 <body>
 
-    <h1>Multiples of 3 or 5</h1>
+    <h1>Excercise 1</h1>
+    <h2>Multiples of 3 or 5</h2>
     <p id="result"></p>
 
     <script>
@@ -18,8 +19,39 @@
             }
         }
 
-        // Display the result
+       
         document.getElementById("result").textContent = multiples.join(", ");
+    </script>
+
+
+    <h1>Excercise 2</h1>
+    <h2>Addition of X and Y bellow N</h2>
+    <label>X:</label>
+    <input type="number" id="x">
+    <br>
+    <label>Y:</label>
+    <input type="number" id="y">
+    <br>
+    <label>Z:</label>
+    <input type="number" id="z">
+    <br>
+    <p id="results2"></p>
+
+    <script>
+         let f = () => {
+
+            let x = parseInt(document.getElementById('x').value);
+            let y = parseInt(document.getElementById('y').value);
+            let z = parseInt(document.getElementById('z').value);
+
+            let result = [];
+
+            for (let n = 1; n < z; n++) {
+                result.push(x * y);
+            }
+            document.getElementById("result2").textContent = multiples.join(", ");
+        }
+    
     </script>
 
 </body>
