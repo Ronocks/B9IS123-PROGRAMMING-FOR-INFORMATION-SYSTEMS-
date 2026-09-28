@@ -24,38 +24,43 @@
     </script>
 
 
-    <h1>Excercise 2</h1>
-    <h2>Addition of X and Y bellow N</h2>
-    <label>X:</label>
-    <input type="number" id="x">
-    <br>
-    <label>Y:</label>
-    <input type="number" id="y">
-    <br>
-    <label>Z:</label>
-    <input type="number" id="z">
-    <br>
-     <button onclick="f()">Submit</button>
+    <h1>Exercise 2</h1>
+<h2>Addition of X and Y below N</h2>
 
-    <p id="results2"></p>
+<label>X:</label>
+<input type="number" id="x">
+<br>
 
-    <script>
-        let f = () => {
+<label>Y:</label>
+<input type="number" id="y">
+<br>
 
-            let x = parseInt(document.getElementById('x').value);
-            let y = parseInt(document.getElementById('y').value);
-            let z = parseInt(document.getElementById('z').value);
+<label>Z:</label>
+<input type="number" id="z">
+<br>
 
-            let result = [];
+<button onclick="f()">Submit</button>
 
-             for (let n = 1; n < z; n++) {
+<p id="results2"></p>
+
+<script>
+    let f = () => {
+
+        let x = parseInt(document.getElementById('x').value);
+        let y = parseInt(document.getElementById('y').value);
+        let z = parseInt(document.getElementById('z').value);
+
+        let result = [];
+
+        for (let n = 1; n < z; n++) {
             if (n % x === 0 || n % y === 0) {
-                multiples.push(n);
+                result.push(n);
             }
         }
-            document.getElementById("results2").textContent = result.join(", ");
-        }
-    </script>
+
+        document.getElementById("results2").textContent = result.join(", ");
+    }
+</script>
 
 </body>
 </html>
