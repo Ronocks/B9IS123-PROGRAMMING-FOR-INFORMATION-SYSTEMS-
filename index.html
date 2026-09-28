@@ -35,10 +35,12 @@
     <label>Z:</label>
     <input type="number" id="z">
     <br>
+     <button onclick="f()">Submit</button>
+
     <p id="results2"></p>
 
     <script>
-         let f = () => {
+        let f = () => {
 
             let x = parseInt(document.getElementById('x').value);
             let y = parseInt(document.getElementById('y').value);
@@ -49,9 +51,9 @@
             for (let n = 1; n < z; n++) {
                 result.push(x * y);
             }
-            document.getElementById("result2").textContent = multiples.join(", ");
+
+            document.getElementById("results2").textContent = result.join(", ");
         }
-    
     </script>
 
 </body>
