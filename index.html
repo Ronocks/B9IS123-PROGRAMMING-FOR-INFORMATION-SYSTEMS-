@@ -92,7 +92,8 @@
 
             let answer = listEuler1(a, b, l);
 
-            alert(answer);
+
+           document.getElementById("results3").textContent = answer;
         };
 
         eulerlist();
@@ -133,7 +134,7 @@
 
             let answer = listEuler2(a, l);
 
-            alert(answer);
+            document.getElementById("results4").textContent = answer;
         };
 
         euler2Lists();
@@ -169,7 +170,7 @@
             let a = [2, 3, 5];
             let l = [1, 2, 3, 4, 5, 6, 7, 9, 10, 10, 10];
             let answer = listEuler3(a, l);
-            alert(answer);
+            document.getElementById("results5").textContent = answer;
         };
 
         euler2Lists1();
