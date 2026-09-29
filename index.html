@@ -60,7 +60,121 @@
 
         document.getElementById("results2").textContent = result.join(", ");
     }
+   
 </script>
+
+     <h1>Exercise 3</h1>
+    <h2>Euler List 1</h2>
+
+    <p id="results3"></p>
+
+    <script>
+
+        let listEuler1 = (a, b, l) => {
+
+            let sum = 0;
+
+            for (let n of l) {
+                if (n % a === 0 || n % b === 0) {
+                    sum += n;
+                }
+            }
+
+            return sum;
+        };
+
+
+        let eulerlist = () => {
+
+            let a = 2;
+            let b = 3;
+            let l = [1, 2, 3, 4, 5, 6, 7, 9, 10, 10, 10];
+
+            let answer = listEuler1(a, b, l);
+
+            alert(answer);
+        };
+
+        eulerlist();
+
+    </script>
+
+
+    <h1>Exercise 4</h1>
+    <h2>Euler List 2</h2>
+
+    <p id="results4"></p>
+
+    <script>
+
+        let listEuler2 = (a, l) => {
+
+            let sum = 0;
+
+            for (let n of l) {              
+                 for (let x of a) {if (n % x === 0) 
+                    {
+                        sum += n;
+                        break;
+                    }
+
+                }
+
+            }
+
+            return sum;
+        };
+
+
+        let euler2Lists = () => {
+
+            let a = [2, 3];
+            let l = [1, 2, 3, 4, 5, 6, 7, 9, 10, 10, 10];
+
+            let answer = listEuler2(a, l);
+
+            alert(answer);
+        };
+
+        euler2Lists();
+
+    </script>
+
+
+    <h1>Exercise 5</h1>
+    <h2>Euler List 3</h2>
+
+    <p id="results5"></p>
+
+    <script>
+        let listEuler3 = (a, l) => {
+            let sum = 0;
+
+            for (let n of l) {for (let x of a) {
+                    if (n % x === 0) 
+                    {
+                        sum += n;
+                        break;
+                    }
+
+                }
+
+            }
+
+            return sum;
+        };
+
+
+        let euler2Lists1 = () => {
+            let a = [2, 3, 5];
+            let l = [1, 2, 3, 4, 5, 6, 7, 9, 10, 10, 10];
+            let answer = listEuler3(a, l);
+            alert(answer);
+        };
+
+        euler2Lists1();
+
+    </script>
 
 </body>
 </html>
