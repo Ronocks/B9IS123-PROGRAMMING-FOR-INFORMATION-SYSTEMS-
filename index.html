@@ -177,5 +177,35 @@
 
     </script>
 
+    <h1>Exercise 6</h1>
+    <h2>Basket Total</h2>
+
+    <p id="results6"></p>
+
+    <script>
+        let total = (basket, prices) => {
+            let cost = 0;
+
+            for(let key in basket){
+                cost += basket[key] * prices[key];
+            }
+            return total;
+        };
+
+        let basket = {
+            milk: 2,
+            meat: 4,
+            bread: 2,
+            eggs: 1
+        }
+        let prices = {
+            milk: 3.25,
+            meat: 4.50,
+            bread: 1.95,
+            eggs: 1.65
+        };
+    </script>
+
+
 </body>
 </html>
