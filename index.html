@@ -177,7 +177,7 @@
 
     </script>
 
-   <h1>Exercise 6</h1>
+<h1>Exercise 6</h1>
 <h2>Basket Total</h2>
 
 <p id="results6"></p>
@@ -187,6 +187,7 @@
 <script>
 
     let total = (basket, prices) => {
+
         let cost = 0;
 
         for(let key in basket){
@@ -196,12 +197,14 @@
         return cost;
     };
 
+
     let basket = {
         milk: 2,
         meat: 4,
         bread: 2,
         eggs: 1
     };
+
 
     let prices = {
         milk: 3.20,
@@ -210,12 +213,15 @@
         eggs: 1.60
     };
 
+
     let answer = total(basket, prices);
+
 
     document.getElementById("results6").textContent =
         "Total: €" + answer.toFixed(2);
 
-    let changeCurrency = () => {
+
+    function changeCurrency() {
 
         fetch("https://api.frankfurter.app/latest?from=EUR&to=USD")
 
@@ -230,9 +236,15 @@
                 document.getElementById("results6").textContent =
                     "Total: $" + convertedTotal.toFixed(2);
 
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
             });
 
-    };
+    }
 
 </script>
 </body>
