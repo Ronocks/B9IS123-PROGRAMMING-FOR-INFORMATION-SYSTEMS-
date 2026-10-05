@@ -177,38 +177,63 @@
 
     </script>
 
-    <h1>Exercise 6</h1>
-    <h2>Basket Total</h2>
+   <h1>Exercise 6</h1>
+<h2>Basket Total</h2>
 
-    <p id="results6"></p>
+<p id="results6"></p>
 
-    <script>
-        let total = (basket, prices) => {
-            let cost = 0;
+<button onclick="changeCurrency()">Change Currency</button>
 
-            for(let key in basket){
-                cost += basket[key] * prices[key];
-            }
-            return cost;
-        };
+<script>
 
-        let basket = {
-            milk: 2,
-            meat: 4,
-            bread: 2,
-            eggs: 1
+    let total = (basket, prices) => {
+        let cost = 0;
+
+        for(let key in basket){
+            cost += basket[key] * prices[key];
         }
-        let prices = {
-            milk: 3.20,
-            meat: 4.50,
-            bread: 1.90,
-            eggs: 1.60
-        };
 
-        let answer = total(basket, prices); 
-        document.getElementById("results6").textContent = answer;
-    </script>
+        return cost;
+    };
 
+    let basket = {
+        milk: 2,
+        meat: 4,
+        bread: 2,
+        eggs: 1
+    };
 
+    let prices = {
+        milk: 3.20,
+        meat: 4.50,
+        bread: 1.90,
+        eggs: 1.60
+    };
+
+    let answer = total(basket, prices);
+
+    document.getElementById("results6").textContent =
+        "Total: €" + answer.toFixed(2);
+
+    let changeCurrency = () => {
+
+        fetch("https://api.frankfurter.app/latest?from=EUR&to=USD")
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                let rate = data.rates.USD;
+
+                let convertedTotal = answer * rate;
+
+                document.getElementById("results6").textContent =
+                    "Total: $" + convertedTotal.toFixed(2);
+
+            });
+
+    };
+
+</script>
 </body>
 </html>
